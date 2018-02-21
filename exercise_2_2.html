@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>American Grades - Exercise 2.2</title>
+  </head>
+  <body>
+    <script>
+      function returnAmericanGrade(grade) {
+        if (grade < 10.1 && grade >8.9) return "A"
+        else if (grade > 7.9) return "B"
+        else if (grade > 6.9) return "C"
+        else if (grade > 5.9) return "D"
+        else if (grade > 0.9) return "F"
+        else return "You entered a wrong character"
+      }
+
+      function toAmericanGrades(grade) {
+        return grade.map(x => returnAmericanGrade(x));
+      }
+
+      function averageAmericanGrade(grades) {
+        return returnAmericanGrade(grades.reduce((a,b) => a + b, 0) /grades.length)
+      }
+
+      var grades1 = [9, 5.5, 6, 7.3];
+      console.log(`last is C -> ${'C' == toAmericanGrades(grades1)[3]}`);
+      console.log(toAmericanGrades(grades1));
+      console.log(averageAmericanGrade(grades1));
+    </script>
+  </body>
+</html>
