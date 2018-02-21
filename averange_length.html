@@ -22,7 +22,7 @@
       function total(route) {
         var res = 0
         for (var i = 0; i < route.length; i++) { // iterate
-          res += route[i]                      // ? ..., ? ...
+          res += route[i]                      // reduce
         }
         return res
       }
@@ -48,6 +48,15 @@
         }
         return res
       }
+
+      // what does this function do? reduce to one value - averange length
+      function averageStretch(route) {
+          return total(route) / route.length
+      }
+      console.log('total route in km: ', total(route1));
+      console.log('route in miles: ', routeInMiles(route1));
+      console.log('streches longer than 2km: ', longStretches(route1));
+      console.log('average kilometers per stretch:', averageStretch(route1));
     </script>
   </body>
 </html>
