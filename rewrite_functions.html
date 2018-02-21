@@ -30,24 +30,24 @@
 
       // what does this function do? filtering
       function longStretches(route) {
-        var res = []
-        for (var i = 0; i < route.length; i++) { // iterate
-          var stretch = route[i]               // ? ...
-          if (stretch > 2) {                   // check
-            res.push(stretch)                // keep
-          }
-        }
-        return res
+        return route.filter(x => x > 2);
       }
 
       // what does this function do? reduce to one value - averange length
       function averageStretch(route) {
           return total(route) / route.length
       }
+
+      // what does this function do? reduce to one value - averange length
+      function averageStretchInMiles(route) {
+          return total(routeInMiles(route)) / route.length
+      }
+
       console.log('total route in km: ', total(route1));
       console.log('route in miles: ', routeInMiles(route1));
       console.log('streches longer than 2km: ', longStretches(route1));
       console.log('average kilometers per stretch:', averageStretch(route1));
+      console.log('average miles per stretch:', averageStretchInMiles(route1));
     </script>
   </body>
 </html>
