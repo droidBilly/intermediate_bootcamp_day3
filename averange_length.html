@@ -22,7 +22,7 @@
       function total(route) {
         var res = 0
         for (var i = 0; i < route.length; i++) { // iterate
-          res += route[i]                      // reduce
+          res += route[i]                      // transform, select
         }
         return res
       }
@@ -37,11 +37,11 @@
         return res
       }
 
-      // what does this function do? ...
+      // what does this function do? filter
       function longStretches(route) {
         var res = []
         for (var i = 0; i < route.length; i++) { // iterate
-          var stretch = route[i]               // ? ...
+          var stretch = route[i]               // select
           if (stretch > 2) {                   // check
             res.push(stretch)                // keep
           }

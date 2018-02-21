@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Fill in the Blanks</title>
+    <title>Rewrite functions</title>
   </head>
   <body>
     <script type="text/javascript">
@@ -20,34 +20,34 @@
 
       // what does this function do? reduce
       function total(route) {
-        var res = 0
-        for (var i = 0; i < route.length; i++) { // iterate
-          res += route[i]                      // transform, select
-        }
-        return res
+        return route.reduce((a, b) => a + b, 0);
       }
 
       // what does this function do? transform
       function routeInMiles(route) {
-        var res = []
-        for (var i = 0; i < route.length; i++) { // iterate
-          var mile = kilometerToMile(route[i]) // transform
-          res[i] = mile                        // keep
-        }
-        return res
+        return route.map(x => kilometerToMile(x))
       }
 
-      // what does this function do? filter
+      // what does this function do? filtering
       function longStretches(route) {
         var res = []
         for (var i = 0; i < route.length; i++) { // iterate
-          var stretch = route[i]               // select
+          var stretch = route[i]               // ? ...
           if (stretch > 2) {                   // check
             res.push(stretch)                // keep
           }
         }
         return res
       }
+
+      // what does this function do? reduce to one value - averange length
+      function averageStretch(route) {
+          return total(route) / route.length
+      }
+      console.log('total route in km: ', total(route1));
+      console.log('route in miles: ', routeInMiles(route1));
+      console.log('streches longer than 2km: ', longStretches(route1));
+      console.log('average kilometers per stretch:', averageStretch(route1));
     </script>
   </body>
 </html>
