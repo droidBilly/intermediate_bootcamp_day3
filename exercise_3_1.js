@@ -12,3 +12,6 @@ function palindrome(word) {
 console.log(`test palindrome 1: -> ${palindrome('noon')}`)
 console.log(`test palindrome 2: -> ${palindrome('civic')}`)
 console.log(`test palindrome 3: -> ${!palindrome('test')}`)
+
+
+[1,2,309634,['hello',-42,'foo bar'],5]
